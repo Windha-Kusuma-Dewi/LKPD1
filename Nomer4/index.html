@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gambar</title>
+</head>
+<body>
+    <!-- Dropdown menu untuk memilih gambar -->
+    <select name="" id="image">
+        <option value="1.jpg">Pilih Gambar</option>
+        <option value="1.jpg">Gambar 1</option>
+        <option value="2.jpg">Gambar 2</option>
+        <option value="3.jpg">Gambar 3</option>
+    </select>
+
+    <!-- Dropdown menu untuk memilih opacity -->
+    <select name="" id="opacity">
+        <option value="1">Pilih Angka</option>
+        <option value="1">1</option>
+        <option value="0.5">0.5</option>
+        <option value="0.2">0.2</option>
+    </select>
+
+    <input type="submit" value="Simpan" onclick="changeImageAndOpacity()">
+     <!-- Ketika tombol diklik, fungsi JavaScript `changeImageAndOpacity` dipanggil -->
+
+    <br><br>
+
+    <img id="imageDisplay" src="" alt="" style="opacity: 1; width: 300px;">
+    <!-- Gambar ini awalnya kosong, tetapi akan diubah berdasarkan pilihan pengguna. Opacity awal diatur ke 1 (penuh) dan lebar gambar diatur ke 300px -->
+
+    <script>
+        function changeImageAndOpacity() {
+            // Mendapatkan elemen dropdown untuk gambar dan opacity, serta elemen gambar
+            var image = document.getElementById("image");
+            var opacity = document.getElementById("opacity");
+            var imageDisplay = document.getElementById("imageDisplay");
+
+            // Mengambil nilai yang dipilih dari dropdown menu
+            var selectedImage = image.value;
+            var selectedOpacity = opacity.value;
+
+            // Mengubah atribut src dan style opacity dari elemen gambar berdasarkan nilai yang dipilih
+            imageDisplay.src = selectedImage;
+            imageDisplay.style.opacity = selectedOpacity;
+        }
+    </script>
+</body>
+</html>

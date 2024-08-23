@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabel</title>
+</head>
+<style>
+    body {
+        font-family: sans-serif;
+    }
+</style>
+<body>
+    <table border="1">
+        <tr> <!-- Baris pertama untuk header tabel -->
+            <th>no</th> 
+            <th>keterangan</th> 
+            <th>Bersedia Membayar</th>
+        </tr> 
+
+        <!-- Baris kedua dan ketiga dengan baris digabungkan untuk penomoran dan keterangan -->
+        <tr>
+            <td colspan="1" rowspan="2"> 1.</td> <!-- Sel ini digabungkan (rowspan) sehingga menempati dua baris pada kolom pertama -->
+            <td rowspan="2"> Bersedia membayar <b>Dana Sumbangan Pembangunan (DSP)</b> Sebesar <b>Rp. 8.500.000</b> dengan mekanisme pembayaran Dana Sumbangan Pendidikan </td>
+            <td><input type="radio"> saat daftar ulang</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <input type="radio">60% dibayarkan saat daftar ulang, dan sisanya dibayarkan paling lambat tanggal 13 Juli 2024</td>
+            </td>
+        </tr>
+
+        <!-- Baris keempat untuk pilihan pembayaran bulanan -->
+        <tr>
+            <td>2.</td> <!-- Nomor urut 2 -->
+            <td>Bersedia membayar <b>Dana Sumbangan Pembangunan (DSP)</b> secara rutin setiap bulan Sebesar <b>Rp. 550.000</b> yang dibayarkan sebelum tanggal 10 setiap bulanya kecuali bulan Juli 2024</td>
+            <td><input type= "checkbox"></td> <!-- Checkbox untuk pilihan pembayaran -->
+        </tr>
+
+        <!-- Baris kelima hingga kedelapan untuk pilihan pembayaran lainya dengan donasi -->
+        <tr>
+            <td rowspan="8">3.</td> <!-- Nomor urut 3, yang digabungkan untuk menempati delapan baris -->
+            <td rowspan="7">Pembayaran lainya. <br>
+                Setelah Putra/Putri kami diterima di SMK wikrama Bogor, kami juga bersedia memberikan:
+                <br><br>
+                 a. wakaf pembangunan Masjid Al-ikram
+                </td>
+            </tr>
+
+            <!-- Pilihan untuk donasi dengan nominal yang berbeda -->
+            <tr>
+                <td rowspan="">
+                    <input type="radio">Rp.300.000 <br>
+                </td>
+            </tr>
+
+            <tr>
+                <td rowspan="">
+                    <input type="radio">Rp.500.000 <br>         
+                </td>
+            </tr>
+
+            <tr>
+                <td rowspan="">
+                    <input type="radio">Rp.1.000.000 <br>       
+                </td>
+            </tr>
+
+            <tr>
+                <td rowspan="">
+                    <input type="radio">Rp.2.000.000 <br>         
+                </td>
+            </tr>
+               
+            <tr>
+                <td rowspan="">
+                    <input type="radio">Rp.5.000.000 <br>            
+                </td>
+            </tr>
+                
+            <tr>
+                <td rowspan="">
+                    <input type="radio">>Rp.5.000.000 atau Rp <input type="number"> <br>      
+                </td>
+            </tr>
+
+            <tr>
+                <td>b. <b>zakat infaq dan sodaqoh</b> secara rutin tiap bulan</td>
+                <td><input type="text" value="Rp. 20.000"></td>
+            </tr>
+        </tr>      
+    </table>
+    
+</body>
+</html>

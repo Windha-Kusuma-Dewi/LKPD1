@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: sans-serif;
+    }
+</style>
+
+<body>
+    <h1>Sample Form</h1>
+    <form action="" id="">
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="age">Age: </label>
+        <input type="number" id="age" name="age"><br><br>
+
+        <label for="gender">Gender: </label>
+        <select name="gender" id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <input type="submit" value="Submit" onclick="handleSubmit(); return false;">
+
+        <br>
+        <br>
+
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        const myTimeout = setTimeout(() => {
+            alert("Maaf waktu anda telah habis");
+        }, 10000);
+
+        function handleSubmit() {
+            clearTimeout(myTimeout);
+
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const gender = document.getElementById('gender').value;
+
+            document.getElementById('result').innerHTML = `
+                Name: ${name} <br>
+                Age: ${age} <br>
+                Gender: ${gender}
+            `;
+        }
+    </script>
+
+</body>
+
+</html>

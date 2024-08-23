@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <div>
+            <label for="status">Status Ayah</label>
+            <input type="radio" name="status" value="h" id="h" onclick="changeLabel(this)">
+            <label for="status">Masih hidup </label>
+            <input type="radio" name="status" value="m" id="m" onclick="changeLabel(this)">
+            <label for="status">Meninggal</label>
+            <input type="radio" name="status" value="t" id="t" onclick="changeLabel(this)">
+            <label for="status">Tidak diketahui </label>
+        </div>
+
+
+        <div id="pendidikan">
+            <label for="">Pendidikan Ayah</label>
+            <input type="text" placeholder="pilih">
+        </div>
+
+        <div id="pekerjaan">
+            <label for="">Pekerjaan Ayah</label>
+            <input type="text" placeholder="pilih">
+        </div>
+
+        <div id="Deskripsi">
+            <label for="">Deskripsi pekerjaan ayah</label>
+            <input type="text" placeholder="spesifikasi pekerjaan">
+        </div>
+
+        <div id="penghasilan">
+            <label for="">Total penghasilan ayah per bulan</label>
+            <input type="text" id="total-penghasilan">
+            <!-- <p>bila tidak memiliki penghasilan tulis "0"</p> -->
+        </div>
+
+        <div id="wrapper">
+            <!-- <label for="detail-bekerja">Detail ayah bekerja, berapa lama sudah bekerja, kondisi kesehatan, dan kondisi karir
+            profesinya</label>
+        <input type="text" id="detail-bekerja"> -->
+        </div>
+    </form>
+
+    <script>
+        function changeLabel(e) {
+            let pendidikan = document.getElementById('pendidikan');
+            let pekerjaan = document.getElementById('pekerjaan');
+            let Deskripsi = document.getElementById('Deskripsi');
+            let penghasilan = document.getElementById('penghasilan');
+
+            if (e.value == "h") {
+                document.getElementById('wrapper').innerHTML = `
+                <label for="detail-bekerja">Detail Ayah bekerja, berapa lama sudah bekerja, kondisi kesehatan, dan kondisi karir profesinya</label>
+                <input type="text" id="detail-bekerja">`;
+                pendidikan.style.display = "block";
+                pekerjaan.style.display = "block";
+                Deskripsi.style.display = "block";
+                penghasilan.style.display = "block";
+            }
+
+            else if (e.value == "m") {
+                document.getElementById('wrapper').innerHTML = `
+                <label for="semasa-hidup">Detail pekerjaan ayah semasa hidup</label>
+                <input type="text" id="semasa-hidup">`;
+                pendidikan.style.display = "block";
+                pekerjaan.style.display = "block";
+                Deskripsi.style.display = "block";
+                penghasilan.style.display = "block";
+            }
+            else {
+                document.getElementById('wrapper').style.display = "none";
+                pendidikan.style.display = "none";
+                pekerjaan.style.display = "none";
+                Deskripsi.style.display = "none";
+                penghasilan.style.display = "none";
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

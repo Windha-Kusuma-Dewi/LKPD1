@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Alert.css">
+    <title>Document</title>
+</head>
+<body>
+    <div style="text-align: center;">
+        <!-- Tombol untuk memicu alert countdown -->
+        <button class="button" id="myButton">Munculkan Alert</button>
+    </div>
+    
+    <div class="countdown" id="countdown">
+        <p>
+            <span style="font-weight:bold;">DANGER!!!</span> Alert akan tertutup dalam -   
+            <span id="count">5</span>
+            <!-- Menampilkan sisa waktu countdown di sini -->
+        </p>
+    </div>
+
+    <script>
+        // Mendapatkan elemen DOM yang diperlukan
+        const button = document.getElementById('myButton');
+        const countdownElement = document.getElementById('countdown');
+        const countDisplay = document.getElementById('count');
+
+        button.addEventListener('click', function() {
+            let count = 5; // Mengatur waktu awal countdown
+
+            countdownElement.classList.add('show');
+
+            // Mengatur interval untuk update countdown setiap detik
+            const interval = setInterval(function() {
+                countDisplay.innerText = count; 
+                count--; // Mengurangi waktu countdown
+
+                // Jika countdown mencapai 0, hentikan interval dan sembunyikan countdown
+                if (count < 0) {
+                    clearInterval(interval); // Menghentikan interval
+                    countdownElement.classList.remove('show');
+                }
+            }, 1000); // dalam milidetik (1000 ms = 1 detik)
+        });
+    </script>
+</body>
+</html>
